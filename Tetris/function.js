@@ -7,20 +7,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const startHardBnt = document.querySelector('#start-hard-button')
 
 
-
     const width = 10
     let nextRandom = 0
     let timerid = 0
     let score = 0
 
     const pics = [
-    'url(images/orange.jpg)',
-    'url(images/pink.jpg)',
-    'url(images/purple.jpg)',
-    'url(images/lightblue.jpg)',
-    'url(images/darkgreen.jpg)',
-    'url(images/green.jpg)',
-    'url(images/yellow.jpg)'
+        'url(images/orange.jpg)',
+        'url(images/pink.jpg)',
+        'url(images/purple.jpg)',
+        'url(images/lightblue.jpg)',
+        'url(images/darkgreen.jpg)',
+        'url(images/green.jpg)',
+        'url(images/yellow.jpg)'
     ]
 
     const lBlock = [
@@ -81,7 +80,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         })
     }
-
 
 
     function control(e) {
@@ -152,14 +150,75 @@ document.addEventListener('DOMContentLoaded', () => {
         const isAtRightEdge = current.some(index => (currentPosition + index) % width === width - 1)
         const isAtLeftEdge = current.some(index => (currentPosition + index) % width === 0)
 
-
-        if (!isAtRightEdge && !isAtLeftEdge){
+        if (!isAtRightEdge && !isAtLeftEdge) {
             currentRotation++
-        if (currentRotation === current.length) {
-            currentRotation = 0
+            if (currentRotation === current.length) {
+                currentRotation = 0
+            }
+
         }
-        
-    }
+
+        if (isAtRightEdge || isAtRightEdge -1){
+            if (current.length === 4){
+                if (isAtRightEdge -1){
+                    if (currentRotation % 2 === 0){
+                        currentPosition = currentPosition -1
+                        currentRotation++
+                    }
+                    else {
+                        currentPosition = currentPosition +1
+                        currentRotation--
+                    }
+
+                    if (currentRotation === current.length) {
+                        currentRotation = 0
+                    }
+                }
+                if (currentRotation % 2 === 0){
+                    currentPosition = currentPosition -2
+                    currentRotation++
+                }
+                else {
+                    currentPosition = currentPosition +2
+                    currentRotation--
+                }
+
+                if (currentRotation === current.length) {
+                    currentRotation = 0
+                }
+            }
+            else {
+                currentPosition = currentPosition -1
+                currentRotation++
+                if (currentRotation === current.length) {
+                    currentRotation = 0
+                }
+            }
+        }
+
+        if (isAtLeftEdge){
+            if (current.length === 4){
+                if (currentRotation % 2 === 0){
+                    currentRotation++
+
+                }
+                else {
+                    currentPosition = currentPosition +1
+                    currentRotation--
+                }
+
+                if (currentRotation === current.length) {
+                    currentRotation = 0
+                }
+            }
+            else {
+                currentPosition = currentPosition +1
+                currentRotation++
+                if (currentRotation === current.length) {
+                    currentRotation = 0
+                }
+            }
+        }
 
         current = theBlocks[random][currentRotation]
         draw()
@@ -169,7 +228,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const displaySquares = document.querySelectorAll('.mini-grid div')
     const displayWidth = 4
     let displayIndex = 0
-
 
 
     const upNextBlocks = [
@@ -191,13 +249,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         })
     }
+
     startEasyBnt.addEventListener('click', () => {
         if (timerid) {
 
             clearInterval(timerid)
             timerid = null
-        }
-        else {
+        } else {
             draw()
             timerid = setInterval(moveDown, 700)
             nextRandom = Math.floor(Math.random() * theBlocks.length)
@@ -212,8 +270,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             clearInterval(timerid)
             timerid = null
-        }
-        else {
+        } else {
             draw()
             timerid = setInterval(moveDown, 500)
             nextRandom = Math.floor(Math.random() * theBlocks.length)
@@ -229,8 +286,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             clearInterval(timerid)
             timerid = null
-        }
-        else {
+        } else {
             draw()
             timerid = setInterval(moveDown, 250)
             nextRandom = Math.floor(Math.random() * theBlocks.length)
@@ -258,6 +314,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     }
+
     function gameOver() {
         if (current.some(index => squares[currentPosition + index].classList.contains('taken'))) {
             scoreDisplay.innerHTML = 'end'
@@ -265,7 +322,6 @@ document.addEventListener('DOMContentLoaded', () => {
             clearInterval(timerid)
         }
     }
-
 
 
 })
