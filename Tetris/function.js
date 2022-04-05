@@ -14,13 +14,13 @@ document.addEventListener('DOMContentLoaded', () => {
     let score = 0
 
     const pics = [
-    'url(images/orange.jpg)',
-    'url(images/pink.jpg)',
-    'url(images/purple.jpg)',
-    'url(images/lightblue.jpg)',
-    'url(images/darkgreen.jpg)',
-    'url(images/green.jpg)',
-    'url(images/yellow.jpg)'
+        'url(images/orange.jpg)',
+        'url(images/pink.jpg)',
+        'url(images/purple.jpg)',
+        'url(images/lightblue.jpg)',
+        'url(images/darkgreen.jpg)',
+        'url(images/green.jpg)',
+        'url(images/yellow.jpg)'
     ]
 
     const lBlock = [
@@ -153,13 +153,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const isAtLeftEdge = current.some(index => (currentPosition + index) % width === 0)
 
 
-        if (!isAtRightEdge && !isAtLeftEdge){
+        if (!isAtRightEdge && !isAtLeftEdge) {
             currentRotation++
-        if (currentRotation === current.length) {
-            currentRotation = 0
+            if (currentRotation === current.length) {
+                currentRotation = 0
+            }
+
         }
-        
-    }
 
         current = theBlocks[random][currentRotation]
         draw()
