@@ -1,3 +1,14 @@
+
+const grid = document.querySelector('.grid')
+
+const scoreDisplay = document.querySelector('#score')
+const startEasyBnt = document.querySelector('#start-easy-button')
+const startMediumBnt = document.querySelector('#start-medium-button')
+const startHardBnt = document.querySelector('#start-hard-button')
+
+
+const width = 10
+
 const pics = [
     'url(images/orange.jpg)',
     'url(images/pink.jpg)',
@@ -44,3 +55,15 @@ const iBlock = [
 ]
 
 const theBlocks = [lBlock, zBlock, tBlock, oBlock, iBlock]
+
+
+const displaySquares = document.querySelectorAll('.mini-grid div')
+const displayWidth = 4
+
+const upNextBlocks = [
+    [1, displayWidth + 1, displayWidth * 2 + 1, 2],
+    [0, displayWidth, displayWidth + 1, displayWidth * 2 + 1],
+    [1, displayWidth, displayWidth + 1, displayWidth + 2],
+    [0, 1, displayWidth, displayWidth + 1],
+    [1, displayWidth + 1, displayWidth * 2 + 1, displayWidth * 3 + 1]
+]
