@@ -7,6 +7,8 @@ const startMediumBnt = document.querySelector('#start-medium-button')
 const startHardBnt = document.querySelector('#start-hard-button')
 
 
+
+
 const width = 10
 
 const pics = [

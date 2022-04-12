@@ -12,6 +12,11 @@ body{
     text-align: center;
 }
 
+#playerName{
+    color: red;
+    text-align: center;
+}
+
 
 .container {
     display: flex;
