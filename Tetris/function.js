@@ -95,6 +95,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
+
+
     function moveDown() {
         undraw()
         currentPosition += width
@@ -302,7 +304,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (row.every(index => squares[index].classList.contains('taken'))) {
                 score += 10
-                scoreDisplay.innerHTML = score
+                scoreDisplay.innerHTML = "Score: " + score
                 row.forEach(index => {
                     squares[index].classList.remove('taken')
                     squares[index].classList.remove('block')
@@ -314,6 +316,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     }
+
 
     function gameOver() {
         if (current.some(index => squares[currentPosition + index].classList.contains('taken'))) {
