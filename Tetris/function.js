@@ -95,9 +95,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    document.addEventListener('keydown', control)
-
-
     function moveDown() {
         undraw()
         currentPosition += width
@@ -256,6 +253,7 @@ document.addEventListener('DOMContentLoaded', () => {
             clearInterval(timerid)
             timerid = null
         } else {
+            document.addEventListener('keydown', control)
             draw()
             timerid = setInterval(moveDown, 700)
             nextRandom = Math.floor(Math.random() * theBlocks.length)
@@ -271,6 +269,7 @@ document.addEventListener('DOMContentLoaded', () => {
             clearInterval(timerid)
             timerid = null
         } else {
+            document.addEventListener('keydown', control)
             draw()
             timerid = setInterval(moveDown, 500)
             nextRandom = Math.floor(Math.random() * theBlocks.length)
@@ -287,6 +286,7 @@ document.addEventListener('DOMContentLoaded', () => {
             clearInterval(timerid)
             timerid = null
         } else {
+            document.addEventListener('keydown', control)
             draw()
             timerid = setInterval(moveDown, 250)
             nextRandom = Math.floor(Math.random() * theBlocks.length)
