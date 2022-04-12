@@ -157,15 +157,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
         }
 
-        if (isAtRightEdge || isAtRightEdge -1){
-            if (current.length === 4){
-                if (isAtRightEdge -1){
-                    if (currentRotation % 2 === 0){
-                        currentPosition = currentPosition -1
+        if (isAtRightEdge || isAtRightEdge - 1) {
+            if (current.length === 4) {
+                if (isAtRightEdge - 1) {
+                    if (currentRotation % 2 === 0) {
+                        currentPosition = currentPosition - 1
                         currentRotation++
                     }
                     else {
-                        currentPosition = currentPosition +1
+                        currentPosition = currentPosition + 1
                         currentRotation--
                     }
 
@@ -173,12 +173,12 @@ document.addEventListener('DOMContentLoaded', () => {
                         currentRotation = 0
                     }
                 }
-                if (currentRotation % 2 === 0){
-                    currentPosition = currentPosition -2
+                if (currentRotation % 2 === 0) {
+                    currentPosition = currentPosition - 2
                     currentRotation++
                 }
                 else {
-                    currentPosition = currentPosition +2
+                    currentPosition = currentPosition + 2
                     currentRotation--
                 }
 
@@ -187,7 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
             else {
-                currentPosition = currentPosition -1
+                currentPosition = currentPosition - 1
                 currentRotation++
                 if (currentRotation === current.length) {
                     currentRotation = 0
@@ -195,14 +195,14 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        if (isAtLeftEdge){
-            if (current.length === 4){
-                if (currentRotation % 2 === 0){
+        if (isAtLeftEdge) {
+            if (current.length === 4) {
+                if (currentRotation % 2 === 0) {
                     currentRotation++
 
                 }
                 else {
-                    currentPosition = currentPosition +1
+                    currentPosition = currentPosition + 1
                     currentRotation--
                 }
 
@@ -211,7 +211,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
             else {
-                currentPosition = currentPosition +1
+                currentPosition = currentPosition + 1
                 currentRotation++
                 if (currentRotation === current.length) {
                     currentRotation = 0
@@ -328,4 +328,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 })
-
