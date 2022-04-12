@@ -2,7 +2,7 @@
 include_once 'database.inc';
 
 
-$SQL = "INSERT INTO tbl (lastname, forname)VALUES ('$lastname', '$fname')";
+$SQL = "INSERT INTO tbl (lastname, forname)VALUES ('$name', '$score')";
 echo $SQL;
 $conn->query($SQL);
 /*** Anzeigen 
