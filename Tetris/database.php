@@ -1,7 +1,7 @@
 <?php
 
 include_once 'database.inc';
-$name = $_POST['name'];
+$name = $_POST['playerName'];
 $rank = $_POST['rank'];
 $number = $_POST['number'];
 
