@@ -2,7 +2,7 @@
 
 include_once 'database.inc';
 $name = $_POST['name'];
-$number = $_POST['score'];
+// $number = $_POST['score'];
 
 
 // print_r($_POST);
